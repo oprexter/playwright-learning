@@ -1,0 +1,30 @@
+git commands 
+
+
+git init
+git add .
+git commit -m "Initial notes"
+git branch -M main   ← only if needed           name your branch to main
+git remote add origin https://github.com/username/repo.git
+git push -u origin main                        now main branch available to push code 
+
+
+Next day: You added more notes
+
+Commands:
+
+git add .
+git commit -m "Updated notes"
+git push
+
+
+
+
+
+| Purpose       | Command                   |
+| ------------- | ------------------------- |
+| Check changes | `git status`              |
+| Add changes   | `git add .`               |
+| Commit        | `git commit -m "message"` |
+| Push          | `git push`                |
+| See branch    | `git branch`              |
