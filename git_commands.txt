@@ -16,6 +16,7 @@ Commands:
 git add .
 git commit -m "Updated notes"
 git push
+git pull ............(use this command first when working on other laptop)
 
 
 
