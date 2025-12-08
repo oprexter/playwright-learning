@@ -1,0 +1,4 @@
+
+step 1 : create a new folder and open in vs code 
+
+step 2 : initialize a node js project by running npm init -y to create a package.json file 
