@@ -1,4 +1,16 @@
 
-step 1 : create a new folder and open in vs code 
+step 1 : create a new folder for playwright project  and open in vs code 
 
-step 2 : initialize a node js project by running npm init -y to create a package.json file 
+step 2 : create a python virtual env for this project using below command 
+	 
+	 python -m venv my_env 
+
+step 3 : to activate the env use below
+
+	my_env\scripts\activate
+
+step 4 : once env active then inside run below command 
+
+	pip install playwright to install playwright 
+
+(optional) to upgrade playwright use this command -->pip install playwright -u
