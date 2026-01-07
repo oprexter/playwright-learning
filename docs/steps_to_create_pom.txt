@@ -30,20 +30,7 @@ step 7 : run below command to install pytest plugin for playwright and testing f
 
          .....(you can use this command pip list to list down all packages downloaded and 
 	      also if you use this command pip show pytest it will give you detailed description of it)
-
-step 8 : create a sample test file and run below 
-
 	 
-
-          
-
-         
-	 
-         
-         
-         
-         
-         
 
  
 
@@ -79,9 +66,4 @@ so the steps written in pytest tests are executed in the browser by Playwright
 
 playwright install
 → Installs actual browser binaries like Chromium, Firefox, and WebKit
-
-
-# what is test in pytest
-->test is just a function whose name starts with with test_
-pytest will automatically find and run these functions
 
