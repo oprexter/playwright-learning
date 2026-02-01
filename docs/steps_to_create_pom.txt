@@ -30,6 +30,28 @@ step 7 : run below command to install pytest plugin for playwright and testing f
 
          .....(you can use this command pip list to list down all packages downloaded and 
 	      also if you use this command pip show pytest it will give you detailed description of it)
+
+step 8 : now the setup is ready , now create a folder inside your playwright project give name tests
+
+step 9 : create a python file name test_google.py ,inside this file write code on how to 
+
+	 open google and write anything on search bar and click search (code already created using chat gpt please refer test_google.py inside Plywright_learning folder)
+
+step 10: after the code is successfully created and run 
+
+	 run this command pytest --help   (it will help you  give tags that can be run along, when running the code from terminal ..for eg: pytest tests\test_google.py --browser=chromium)
+
+step 11: create folders inside root folder (playwright learning) utils, pages, reports and tests..(ignore tests if already created in step 8)
+
+step 12: create conftest.py file under root folder (playwright learning)
+
+(about conftest.py imagine you are testing 10 different websites 
+
+without conftest.py you would need to write this same code in every test file 
+
+this repeating code is not good practice
+
+with conftest.py we define that once as a fixture and just use it in tests)
 	 
 
  
