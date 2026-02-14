@@ -7,7 +7,6 @@ class Homepage:
         self.upgrade_button = page.get_by_role("button", name="Upgrade")
         self.performance_link = page.get_by_role("link", name="Performance")
         self.dashboard_link = page.get_by_role("link", name="Dashboard")
-        self.perf=page.get_by_role("heading", name="Employee Reviews")
         
         
     def upgrade_button_visible(self):
@@ -19,8 +18,5 @@ class Homepage:
             
     def click_dashboard_link(self):
         self.dashboard_link.click()
-        
-    def perf_visible(self):
-        expect(self.perf).to_be_visible()
             
         
