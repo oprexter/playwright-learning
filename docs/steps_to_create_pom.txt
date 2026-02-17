@@ -63,6 +63,137 @@ step 13: then watch this video to understand pom
  
 
 
+--------------------understanding confitest-------------------------
+
+when pytest fixture (scope)
+🟢 Case 1 — scope="function" (default)
+
+This is the flow you described.
+
+Test 1 → setup → run → teardown
+Test 2 → setup → run → teardown
+Test 3 → setup → run → teardown
+
+
+Fixture runs for every test.
+
+🔵 Case 2 — scope="session" (Your Case)
+
+Your login fixture runs only once.
+
+Actual flow:
+
+pytest starts
+   ↓
+session setup runs once (login)
+   ↓
+Test 1 → run test
+Test 2 → run test
+Test 3 → run test
+   ↓
+session teardown runs once (logout)
+
+
+#how fixtures run 
+
+1. Find all tests
+2. For each test → check what fixtures it needs
+3. If test needs a fixture → prepare fixture (based on scope)
+4. scope sesssion is run once 
+5. Run test
+
+---------------------------------------------------------------
+
+to understand the flow of pytest with fixture scope function and session 
+
+
+⭐ How Pytest Actually Runs Them
+
+Assume test order is:
+
+test A
+test B
+test C
+test D
+
+
+Pytest runs in this order:
+
+✅ Step 1 — Start pytest
+Load fixtures
+Load hooks
+Find tests
+
+✅ Step 2 — Run test A
+Does test A need session fixture?
+YES → run session fixture (first time)
+→ execute test A
+
+
+Session fixture is now created and kept alive.
+
+✅ Step 3 — Run test B
+Does test B need session fixture?
+YES → reuse existing session fixture
+→ execute test B
+
+
+No new fixture run.
+
+✅ Step 4 — Run test C
+Does test C need session fixture?
+YES → reuse same session fixture
+→ execute test C
+
+
+Still same fixture.
+
+✅ Step 5 — Run test D
+Does test D need function fixture?
+YES → run function fixture
+→ execute test D
+→ teardown function fixture immediately
+
+
+Function scope = per test.
+
+✅ Step 6 — After All Tests
+Session fixture teardown runs once
+
+
+Example:
+
+logout
+close browser
+
+🎯 Real Flow (Visual Timeline)
+pytest starts
+↓
+session fixture runs once
+↓
+test A
+↓
+test B
+↓
+test C
+↓
+function fixture runs
+↓
+test D
+↓
+function fixture cleanup
+↓
+session fixture cleanup
+
+so,
+
+pytest runs tests one by one.
+For each test it checks required fixtures.
+Session fixture runs once and is reused.
+Function fixture runs per test.
+Session teardown runs at end.
+
+
 
 
 
